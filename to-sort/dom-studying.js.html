@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>viewBox2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="http://localhost:8001/css/lib/normalize&#45;2.1.2.css"> -->
+    <style media="screen" type="text/css">
+  </style>
+</head>
+
+<body>
+  <svg>
+        <g>
+        <rect>
+        </rect>
+        </g>
+  </svg>
+  The text
+
+
+  <!-- A comment -->
+  more text 2
+  <script>
+    for(var i=0; i<document.body.childNodes.length; i++) {
+
+            document.body.childNodes[i].nodeValue = 'nodeValue'
+            document.body.childNodes[i].innerHTML = 'innerHTML'
+    console.log(i, '- - - - - - - - - - - - - - - - - - - -',
+            document.body.childNodes[i].nodeType,
+            document.body.childNodes[i].nodeName
+            )
+      console.log(
+              document.body.childNodes[i].nodeValue,
+              document.body.childNodes[i].innerHTML
+              )
+    }
+  </script>
+</body>
+</html>

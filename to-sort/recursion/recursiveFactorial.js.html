@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>??Title??</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:8001/css/lib/normalize-2.1.2.css">
+    <style media="screen" type="text/css">
+        /* css here */
+    </style>
+</head>
+
+<body>
+    <!-- <script src="http://localhost:8001/js/lib/lodash&#45;v2.4.1.js"></script> -->
+    <!-- <script src="http://localhost:8001/js/lib/jquery&#45;1.11.0.js"></script> -->
+    <!-- <script src="http://localhost:8001/js/lib/d3&#45;3.4.13.js"></script> -->
+
+<script>
+
+
+var recursiveFactorial = function(n) {
+    var recur = function(x, y) {
+        if (y === n) {
+            console.trace()
+            return x * y;
+        } else {
+            console.trace()
+            return recur(x * y, y + 1);
+        }
+    }
+    return recur(1, 1);
+};
+
+recursiveFactorial(5);</script>
+
+
+</body>
+
+</html>

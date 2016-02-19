@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>rest and spread</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="http://localhost:8001/css/lib/normalize&#45;2.1.2.css"> -->
+    <style media="screen" type="text/css">
+    </style>
+</head>
+
+<body>
+    <script src="http://localhost:8001/js/lib/lodash-v3.10.1.js"></script>
+    <script src="http://localhost:8001/js/lib/babel-core--browser.js"></script>
+    <script type="text/babel">
+
+    // let n     = [[1], 2];
+    // let n_org = [[1], 2];
+    // let n_org_s = JSON.stringify(n_org);
+    //
+    // let m = [...n];
+    //
+    // console.log(' - - - - - - - - - -');
+    // let q =  _.each(m, (e,i)=>{
+    //     if (i === 0) {
+    //         m[i][0] = m[i][0]*10000;
+    //         console.log('a', e)
+    //     }
+    //     if (i === 1) {
+    //         m[i] = m[i]*10000;
+    //         console.log('b', e)
+    //     }
+    // })
+    //
+    // console.log(' - - - - - - - - - -');
+    // let n_aft_s = JSON.stringify(n);
+    // console.log(`mutateed: ${n_aft_s !== n_org_s}`);
+    // console.log(`n: ${n_org_s}`);
+    // console.log(`m: ${n_aft_s}`);
+
+
+    let n     = {a:[1], b:2, c:{d:3}};
+    let n_org = {a:[1], b:2, c:{d:3}};
+    let n_org_s = JSON.stringify(n_org);
+
+    let m = {...n}
+
+    console.log(' - - - - - - - - - -');
+    let q =  _.each(m, (e,i)=>{
+        if (i === 'a') {
+            m[i][0] = m[i][0]*10000;
+            console.log(m[i]);
+        }
+        if (i === 'b') {
+            m[i] = m[i]*10000;
+            console.log(m[i]);
+        }
+        if (i === 'c') {
+            m[i].d = m[i].d*10000;
+            console.log(m[i]);
+        }
+    })
+    console.log(' - - - - - - - - - -');
+    let n_aft_s = JSON.stringify(n);
+    console.log(`mutated: ${n_aft_s !== n_org_s}`);
+    console.log(`n org: ${n_org_s}`);
+    console.log(`n aft: ${n_aft_s}`);
+
+
+
+    // let n = { a:[1], b:2};
+    // let m = {...n}
+    // console.log( n.a, n.b )
+    // console.log(' - - - - - - - - - -');
+    // let q =  _.each(m, (e,i)=>{
+    //     // if (i === 'a') {
+    //     //     e[0] = e[0]*10000;
+    //     //     console.log('a', e)
+    //     // }
+    //     // if (i === 'b') {
+    //     //     e = e*10000;
+    //     //     console.log('b', e)
+    //     // }
+    //     if (i === 'a') {
+    //         m[i][0] = m[i][0]*10000;
+    //         console.log('a', e)
+    //     }
+    //     if (i === 'b') {
+    //         m[i] = m[i]*10000;
+    //         console.log('b', e)
+    //     }
+    // })
+    //
+    // console.log(' - - - - - - - - - -');
+    // console.log('n', n.a, n.b)
+    // console.log('m', m.a, m.b)
+    // console.log('q', q.a, q.b)
+    </script>
+</body>
+
+</html>
