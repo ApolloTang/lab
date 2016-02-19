@@ -19,11 +19,19 @@
     <!-- <script src="http://localhost:8001/js/lib/d3&#45;3.4.13.js"></script> -->
 
 <script>
-var str = 'wor; d1; word2 word3';
-var rgx = /(\b(\w+)\b)$/;
+var str = 'word1;word2 word3';
+var rgx = /(\b(\w+)\b\s?)+/g;
 var m;
 m = rgx.exec(str);
 console.log(m, rgx.lastIndex);
+m = rgx.exec(str);
+console.log(m, rgx.lastIndex);
+m = rgx.exec(str);
+console.log(m, rgx.lastIndex);
+
+r = str.replace(rgx, "$1 $2");
+console.log(r);
+
 </script>
 
 </body>
