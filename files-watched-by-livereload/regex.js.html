@@ -15,22 +15,33 @@
 
 <body>
     <script src="http://localhost:8001/js/lib/lodash-v2.4.1.js"></script>
-    <!-- <script src="http://localhost:8001/js/lib/jquery&#45;1.11.0.js"></script> -->
-    <!-- <script src="http://localhost:8001/js/lib/d3&#45;3.4.13.js"></script> -->
-
 <script>
-var str = 'word1;word2 word3';
-var rgx = /(\b(\w+)\b\s?)+/g;
-var m;
-m = rgx.exec(str);
-console.log(m, rgx.lastIndex);
-m = rgx.exec(str);
-console.log(m, rgx.lastIndex);
-m = rgx.exec(str);
-console.log(m, rgx.lastIndex);
+var regExp = /((\b\w+\b))/g;
 
-r = str.replace(rgx, "$1 $2");
-console.log(r);
+var string = 'word1;word2;word3';
+
+var m = string.match(regExp);
+console.log('string.match():\n'+m);
+
+console.log('- - - - - - - - - -');
+
+if (m) {
+    var numberOfMatch = m.length;
+    var i=0; var e;
+    for (; i<numberOfMatch; i++) {
+        e = regExp.exec(string);
+        console.log('regExp.exec()  i='+i+'   regExp.lastIndex=' + regExp.lastIndex + '\n', e);
+    }
+}
+
+console.log('- - - - - - - - - -');
+var r = string.replace(regExp, '[$1 $2 $3 $4 $5 $6 $9]');
+console.log('string.replace():\n'+r);
+
+console.log('- - - - - - - - - -');
+console.log('original string: \n'+ string +'\n0123456789012345678901234567890\n0---------1---------2---------3');
+console.log(regExp);
+
 
 </script>
 
