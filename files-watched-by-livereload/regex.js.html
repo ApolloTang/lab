@@ -22,7 +22,7 @@ var string = 'about 24 characters long';
 
 var m = string.match(regExp);
 console.log('typeof match: ',  Object.prototype.toString.call(m));
-console.log('string.match():\n'+m);
+console.log('string.match() :\n ', m);
 
 console.log('- - - - - - - - - -');
 
@@ -31,16 +31,16 @@ if (m) {
     var i=0; var e;
     for (; i<numberOfMatch; i++) {
         e = regExp.exec(string);
-        console.log('regExp.exec()  i='+i+'   regExp.lastIndex=' + regExp.lastIndex + '\n', e);
+        console.log('regExp.exec()  i='+i+'   regExp.lastIndex=' + regExp.lastIndex + ' :\n', e);
     }
 }
 
 console.log('- - - - - - - - - -');
 var r = string.replace(regExp, '[$1|$2|$3|$4|$5|$6|$9]');
-console.log('string.replace():\n'+r);
+console.log('string.replace() :\n'+r);
 
 console.log('- - - - - - - - - -');
-console.log('original string: \n'+ string +'\n0123456789012345678901234567890\n0---------1---------2---------3');
+console.log('original string : \n'+ string +'\n0123456789012345678901234567890\n0---------1---------2---------3');
 console.log(regExp);
 
 
