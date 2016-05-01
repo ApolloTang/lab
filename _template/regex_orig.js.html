@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>aa</title>
+    <title>RegExp Lab</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://localhost:8001/css/lib/normalize-2.1.2.css">
@@ -16,33 +16,57 @@
 <body>
     <script src="http://localhost:8001/js/lib/lodash-v2.4.1.js"></script>
 <script>
-var regExp = /^.*?([0-9][0-9])/g;
+var regExp = /.((((((((((((((o))))))))))))))./g;
 
-var string = 'about 24 characters long';
+var string = 'about 2 4 charoacters 67 long';
+
+console.log('string: '+string);
+console.log('        0123456789012345678901234567890');
+console.log('        0---------1---------2---------3');
+console.log('regExp: ', regExp);
+
+console.log('\n- - - - - - - - - - regExp.test()');
+
+var matched = regExp.test(string);
+console.log('regExp.test(string) :', matched );
+
+console.log('\n- - - - - - - - - - string.match()');
 
 var m = string.match(regExp);
-console.log('typeof match: ',  Object.prototype.toString.call(m));
-console.log('string.match() :\n ', m);
-
-console.log('- - - - - - - - - -');
-
+console.log('typeof string.match(regExp): ',  Object.prototype.toString.call(m));
 if (m) {
+    console.log('string.match(regExp) :', m);
     var numberOfMatch = m.length;
-    var i=0; var e;
-    for (; i<numberOfMatch; i++) {
-        e = regExp.exec(string);
-        console.log('regExp.exec()  i='+i+'   regExp.lastIndex=' + regExp.lastIndex + ' :\n', e);
-    }
+    console.log('numberOfMatch = string.match(regExp).length: ', numberOfMatch);
+} else {
+    console.log('numberOfMatch = string.match(regExp).length >>>  undefined.length');
 }
 
-console.log('- - - - - - - - - -');
-var r = string.replace(regExp, '[$1|$2|$3|$4|$5|$6|$9]');
+console.log('\n- - - - - - - - - - regExp.exec()');
+
+if (m) {
+    var i=0; var e;
+    for (; i<numberOfMatch; i++) {
+        var e = regExp.exec(string);
+        var numberOfCapture = e.length - 1;
+        console.log('i='+i+'  regExp.lastIndex='+regExp.lastIndex+'  numberOfCapture='+numberOfCapture+'  regExp.exe(string):\n');
+        console.log(e);
+    }
+} else {
+    e = regExp.exec(string);
+    console.log('regExp.exe(string): ', e)
+}
+
+console.log('\n- - - - - - - - - - string.replace()');
+var r = string.replace(regExp, '[$1|$2|$3|$4|$5|$6|$7|$8|$9|$10|$11|$12]');
 console.log('string.replace() :\n'+r);
 
-console.log('- - - - - - - - - -');
-console.log('original string : \n'+ string +'\n0123456789012345678901234567890\n0---------1---------2---------3');
-console.log(regExp);
-
+console.log('\n- - - - - - - - - - string.search(regExp)');
+// string.search(regExp);
+// If matched, returns the character position of first match
+// If not matched, return -1
+// Does not support global search, it ignores the g flag
+console.log('string.search(regExp): ', string.search(regExp) );
 
 </script>
 
