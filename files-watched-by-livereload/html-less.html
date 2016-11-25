@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>event flow</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://localhost:8001/css/lib/normalize-2.1.2.css">
+    <style media="screen" type="text/css">
+        /* css here */
+    </style>
+    <style type="text/less">
+        /* less goes here */
+        * {margin:0; padding: 0}
+        body {
+            background: green;
+            padding: 100px;
+            border: 10px dotted red;
+        }
+        #blue {
+            background-color:blue;
+            height: 100px;
+            padding: 10px;
+            border: 10px dotted yellow;
+            left: 0px;
+            top: 0px;
+        }
+        #red {
+            background-color:red;
+            height:50px; width:50px;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blue"><div id="red"></div></div>
+<script src="http://localhost:8001/js/lib/less.v2.7.1.min.js"></script>
+<script src="http://localhost:8001/js/lib/lodash-v2.4.1.js"></script>
+<script src="http://localhost:8001/js/lib/jquery-1.11.0.js"></script>
+<script>
+
+var divRed = document.querySelector('#red');
+var divBlue = document.querySelector('#blue');
+
+console.log('blue: l', divBlue.offsetLeft); //logs 60
+console.log('blue: t', divBlue.offsetTop); //logs 60
+console.log('---------')
+
+console.log('red: L', divRed.offsetLeft); //logs 60
+console.log('red: t', divRed.offsetTop); //logs 60
+console.log('---------')
+
+console.log(divRed.offsetParent);
+console.log(divBlue.offsetParent);
+</script>
+</body>
+</html>
+</html>
